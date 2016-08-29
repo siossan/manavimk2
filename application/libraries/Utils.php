@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$logClassFile = dirname(__FILE__) . '/logs.php';
+$logClassFile = dirname(__FILE__) . '/Logs.php';
 require_once $logClassFile;
 
 class Utils extends Logs
