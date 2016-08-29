@@ -64,9 +64,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'www.snowwhite.hokkaido.jp',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'hoge',
 	'database' => 'manavimk2',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
