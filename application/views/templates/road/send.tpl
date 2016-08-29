@@ -13,6 +13,8 @@
         			            "id": "{$v.item_id}",
         			            "title": "{$v.title}",
                                 "file": "{$v.file}",
+                                "viewfile": "{$v.viewfile}",
+                                "type": "{$v.type}",
                                 "start": "{$v.start_time}",
                                 "end": "{$v.end_time}"
         		            }
@@ -21,6 +23,8 @@
         			            "id": "{$v.item_id}",
         			            "title": "{$v.title}",
                                 "file": "{$v.file}",
+                                "viewfile": "{$v.viewfile}",
+                                "type": "{$v.type}",
                                 "start": "{$v.start_time}",
                                 "end": "{$v.end_time}"
         		            },
