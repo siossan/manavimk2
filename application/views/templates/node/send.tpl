@@ -10,13 +10,13 @@
 		            {
 			            "id": "{$v.road_id}",
 			            "degree": {$v.degree},
-			            "image": {$v.image}
+			            "image": "{$v.image}"
 		            }
 		        {else}
 		            {
 			            "id": "{$v.road_id}",
 			            "degree": {$v.degree},
-			            "image": {$v.image}
+			            "image": "{$v.image}"
 		            },
 		        {/if}
             {/foreach}
