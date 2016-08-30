@@ -32,6 +32,20 @@ class Nodes_model extends CI_Model {
         }
     }
 
+    public function getStartNode() {
+        $sql = 'SELECT * FROM nodes n 
+                WHERE n.start_flg = 1';
+        $query = $this->db->query($sql);
+        if ($this->db->query($sql)) {
+            // 成功処理
+            $result = $query->result('array');
+            return $result;
+        } else {
+            // 失敗処理
+            return false;
+        }
+    }
+
     public function setQuestion($params){
         $sql = $this->db->insert_string('questions', $params);
         if ($this->db->query($sql)) {

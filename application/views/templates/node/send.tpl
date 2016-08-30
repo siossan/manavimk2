@@ -9,12 +9,14 @@
                 {if $smarty.foreach.loop.last}
 		            {
 			            "id": "{$v.road_id}",
-			            "degree": {$v.degree}
+			            "degree": {$v.degree},
+			            "image": {$v.image}
 		            }
 		        {else}
 		            {
 			            "id": "{$v.road_id}",
 			            "degree": {$v.degree}
+			            "image": {$v.image}
 		            },
 		        {/if}
             {/foreach}

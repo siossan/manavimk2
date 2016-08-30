@@ -8,14 +8,16 @@ class Node extends MY_Controller
     {
         // Set smarty template.
         // applicatoin/views/templates/...
+        $this->load->model('Nodes_model', '', TRUE);
+        $nodes = $this->Nodes_model->getStartNode();
+        $this->smarty->assign('nodes', $nodes);
 
-        $this->view('road/welcome_message');
+        $this->view('node/index');
     }
 
     public function add()
     {
-
-        $this->view('road/add');
+        $this->view('node/add');
     }
 
     public function send()
