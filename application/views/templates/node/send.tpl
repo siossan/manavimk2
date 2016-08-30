@@ -15,7 +15,7 @@
 		        {else}
 		            {
 			            "id": "{$v.road_id}",
-			            "degree": {$v.degree}
+			            "degree": {$v.degree},
 			            "image": {$v.image}
 		            },
 		        {/if}
