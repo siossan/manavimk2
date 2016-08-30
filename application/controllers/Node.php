@@ -34,7 +34,7 @@ class Node extends MY_Controller
                     break;
                 }
             }
-            $roads[] = array('road_id' => $v['road_id'], 'degree' => $v['degree']);
+            $roads[] = array('road_id' => $v['road_id'], 'degree' => $v['degree'], 'image' => $v['image']);
         }
 
         $this->smarty->assign('node', $node[0]);
