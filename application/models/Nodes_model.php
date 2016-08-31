@@ -32,7 +32,7 @@ class Nodes_model extends CI_Model {
 
 
     public function getNodeWithRoadIdById($nodeId) {
-        $sql = 'SELECT n.*, r.road_id, r.file as road_file, r.degree FROM nodes n 
+        $sql = 'SELECT n.*, r.road_id, r.file as road_file, r.degree, r.image FROM nodes n 
                 LEFT JOIN roads r ON n.node_id =r.start_node_id 
                 WHERE n.node_id = '.$nodeId;
         $query = $this->db->query($sql);
