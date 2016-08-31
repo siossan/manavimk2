@@ -12,14 +12,14 @@ class Item extends MY_Controller {
 	}
 
 
-    public function itemlist($nId)
+    public function itemlist($rId)
     {
         // Set smarty template.
         // applicatoin/views/templates/...
         $this->load->model('Items_model', '', TRUE);
-        $items = $this->Items_model->getItemsByNodeId($nId);
+        $items = $this->Items_model->getItemsByRoadId($rId);
         $this->smarty->assign('item', $items);
-        $this->smarty->assign('node_id', $nId);
+        $this->smarty->assign('road_id', $rId);
         $this->view('item/itemlist');
     }
 
