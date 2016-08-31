@@ -231,7 +231,7 @@ class Node extends MY_Controller
             'type' => 'node',
         );
         if($fileFlg == true && $_FILES['file']['size'] > 0){
-            $params['file'] = sprintf('%s%s', $_FILES['file']['name'], '.MP4');
+            $params['file'] = sprintf('%s', $_FILES['file']['name']);
         }
 
         $this->load->model('Nodes_model', '', TRUE);
