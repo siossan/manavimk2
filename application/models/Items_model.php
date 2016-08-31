@@ -18,7 +18,7 @@ class Items_model extends CI_Model {
 
 
     public function getItemsByRoadId($roadId) {
-        $sql = 'SELECT * FROM item i 
+        $sql = 'SELECT * FROM items i 
                 WHERE i.road_id = '.$roadId;
         $query = $this->db->query($sql);
         if ($this->db->query($sql)) {
