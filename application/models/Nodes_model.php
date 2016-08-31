@@ -32,8 +32,8 @@ class Nodes_model extends CI_Model {
 
 
     public function getNodeWithRoadIdById($nodeId) {
-        $sql = 'SELECT * FROM nodes n 
-                LEFT JOIN roads r ON r.start_node_id = n.node_id
+        $sql = 'SELECT n.*, r.road_id, r.file as road_file, r.degree FROM nodes n 
+                LEFT JOIN roads r ON n.node_id =r.start_node_id 
                 WHERE n.node_id = '.$nodeId;
         $query = $this->db->query($sql);
         if ($this->db->query($sql)) {
@@ -61,9 +61,9 @@ class Nodes_model extends CI_Model {
     }
 
 
-    public function getNodesByCategoryId($cId) {
+    public function getNodesByCategoryId($id) {
         $sql = 'SELECT * FROM nodes n 
-                WHERE n.category_id = '. $cId;
+                WHERE n.node_id = '. $id;
         $query = $this->db->query($sql);
         if ($this->db->query($sql)) {
             // 成功処理
