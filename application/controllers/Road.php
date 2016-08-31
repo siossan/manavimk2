@@ -253,7 +253,7 @@ class Road extends MY_Controller {
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = '/upload/'.$_FILES['image']['name'];
+                $path = sprintf('./upload/%s', $_FILES['image']['name']);
 
                 echo $path;
                 echo $_FILES['image']['tmp_name'];
