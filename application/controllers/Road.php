@@ -154,11 +154,6 @@ class Road extends MY_Controller {
                         throw new RuntimeException('その他のエラーが発生しました');
                 }
 
-                // $_FILES['image']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
-                $type = @exif_imagetype($_FILES['image']['tmp_name']);
-                if (!in_array($type, array(IMAGETYPE_JPEG), true)) {
-                    throw new RuntimeException('画像形式が未対応です');
-                }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
                 $path = '/upload/'.$_FILES['image']['name'];
@@ -255,12 +250,6 @@ class Road extends MY_Controller {
                         throw new RuntimeException('ファイルサイズが大きすぎます');
                     default:
                         throw new RuntimeException('その他のエラーが発生しました');
-                }
-
-                // $_FILES['image']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
-                $type = @exif_imagetype($_FILES['image']['tmp_name']);
-                if (!in_array($type, array(array(IMAGETYPE_JPEG)), true)) {
-                    throw new RuntimeException('画像形式が未対応です');
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する

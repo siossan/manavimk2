@@ -89,12 +89,7 @@ class Node extends MY_Controller
                     default:
                         throw new RuntimeException('その他のエラーが発生しました');
                 }
-
-                // $_FILES['file']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
-                $type = @exif_imagetype($_FILES['file']['tmp_name']);
-                if (!in_array($type, array('IMAGETYPE_JPEG'), true)) {
-                    throw new RuntimeException('画像形式が未対応です');
-                }
+                
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
                 $path = "/upload/".$_FILES['file']['name'];
