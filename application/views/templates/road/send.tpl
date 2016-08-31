@@ -2,7 +2,7 @@
 	"id": "{$road.road_id}",
 	"title": "{$road.title}",
 	"type": "{$road.type}",
-	"url": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$road.file}",
+	"url": "../manavimk2/common/files/{$road.file}",
 	"next_node_id": "{$road.end_node_id}",
 	"prev_node_id": "{$road.start_node_id}",
 	"items": [
@@ -12,8 +12,8 @@
         		            {
         			            "id": "{$v.item_id}",
         			            "title": "{$v.title}",
-                                "file": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.file}",
-                                "viewfile": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.viewfile}",
+                                "file": "../manavimk2/common/files/{$v.file}",
+                                "viewfile": "../manavimk2/common/files/{$v.viewfile}",
                                 "type": "{$v.type}",
                                 "start": "{$v.start_time}",
                                 "end": "{$v.end_time}"
@@ -22,8 +22,8 @@
         		            {
         			            "id": "{$v.item_id}",
         			            "title": "{$v.title}",
-                                "file": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.file}",
-                                "viewfile": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.viewfile}",
+                                "file": "../manavimk2/common/files/{$v.file}",
+                                "viewfile": "../manavimk2/common/files/{$v.viewfile}",
                                 "type": "{$v.type}",
                                 "start": "{$v.start_time}",
                                 "end": "{$v.end_time}"
