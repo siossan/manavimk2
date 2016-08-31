@@ -176,7 +176,7 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 |
 | Options are: TRUE or FALSE (boolean)
 |
-| The other items let you set the query string 'words' that will
+| The other item let you set the query string 'words' that will
 | invoke your controllers and its functions:
 | example.com/index.php?c=controller&m=function
 |
