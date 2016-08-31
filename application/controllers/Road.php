@@ -235,7 +235,7 @@ class Road extends MY_Controller {
             } catch (RuntimeException $e) {
                 $fileFlg = false;
                 //$msg = ['red', $e->getMessage()];
-                throw new RuntimeException('失敗しました');
+                throw new RuntimeException($e->getMessage());
             }
         }
 
@@ -275,7 +275,7 @@ class Road extends MY_Controller {
             } catch (RuntimeException $e) {
                 $imageFlg = false;
                 //$msg = ['red', $e->getMessage()];
-                throw new RuntimeException('失敗しました');
+                throw new RuntimeException($e->getMessage());
 
             }
         }
