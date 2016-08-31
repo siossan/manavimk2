@@ -257,6 +257,7 @@ class Road extends MY_Controller {
 
                 echo $path;
                 echo $_FILES['image']['tmp_name'];
+                echo file_exists($_FILES['image']['tmp_name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['image']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
