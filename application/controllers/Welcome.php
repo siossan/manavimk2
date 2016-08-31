@@ -22,6 +22,11 @@ class Welcome extends MY_Controller {
 	{
 		// Set smarty template.
 		// applicatoin/views/templates/...
-		$this->view('welcome_message');
+
+        $this->load->model('Categories_model', '', TRUE);
+        $Categories = $this->Categories_model->getCategories();
+        $this->smarty->assign('categories', $Categories);
+
+		$this->view('index');
 	}
 }

@@ -1,7 +1,7 @@
 {
 	"id": "{$road.road_id}",
 	"title": "{$road.title}",
-	"type": "{$road.type}",
+	"type": "line",
 	"url": "../manavimk2/upload/{$road.file}",
 	"next_node_id": "{$road.end_node_id}",
 	"prev_node_id": "{$road.start_node_id}",
