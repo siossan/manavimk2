@@ -89,7 +89,7 @@ class Node extends MY_Controller
                     default:
                         throw new RuntimeException('その他のエラーが発生しました');
                 }
-                
+
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
                 $path = "/upload/".$_FILES['file']['name'];
