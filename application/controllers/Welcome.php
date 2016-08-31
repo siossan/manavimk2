@@ -24,7 +24,7 @@ class Welcome extends MY_Controller {
 		// applicatoin/views/templates/...
 
         $this->load->model('Categories_model', '', TRUE);
-        $Categories = $this->Categories_model->getCategories();
+        $Categories = $this->Categories_model->getCategoriesWithStar();
         $this->smarty->assign('categories', $Categories);
 
 		$this->view('index');

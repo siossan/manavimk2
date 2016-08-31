@@ -69,7 +69,7 @@
 				<div class="span3">
 					<dl class="blue active">
 						<dt class="item-img">
-							<img class="img-circle" src="common/images/naviko/01.png" onclick="location.href='http://www.snowwhite.hokkaido.jp/ThetaTest/main.html?viewmode=0'">
+							<img class="img-circle" src="common/images/naviko/01.png" onclick="location.href='http://www.snowwhite.hokkaido.jp/ThetaTest/main.html?node_id={$v.node_id}&viewmode=0'">
 						<ul>
 							<li class="heading"><h2>{$v.title}</h2></li>
 							<li class="take-look">選択</li>
@@ -80,7 +80,7 @@
 	<div class="span3">
 		<dl class="blue active">
 			<dt class="item-img">
-				<img class="img-circle" src="common/images/naviko/01.png" onclick="location.href='http://www.snowwhite.hokkaido.jp/ThetaTest/main.html?viewmode=1'">
+				<img class="img-circle" src="common/images/naviko/01.png" onclick="location.href='http://www.snowwhite.hokkaido.jp/ThetaTest/main.html?node_id={$v.node_id}&viewmode=1'">
 			<ul>
 				<li class="heading"><h2>{$v.title}(2画面)</h2></li>
 				<li class="take-look">選択</li>
