@@ -127,11 +127,11 @@ class Road extends MY_Controller {
                         throw new RuntimeException('ファイル保存時にエラーが発生しました');
                     }
 
-                    $msg = ['green', 'ファイルは正常にアップロードされました'];
+                    //$msg = ['green', 'ファイルは正常にアップロードされました'];
 
                 } catch (RuntimeException $e) {
                     $fileFlg = false;
-                    $msg = ['red', $e->getMessage()];
+                    //$msg = ['red', $e->getMessage()];
 
                 }
             }
@@ -167,11 +167,11 @@ class Road extends MY_Controller {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
                 }
 
-                $msg = ['green', 'ファイルは正常にアップロードされました'];
+                //$msg = ['green', 'ファイルは正常にアップロードされました'];
 
             } catch (RuntimeException $e) {
                 $imageFlg = false;
-                $msg = ['red', $e->getMessage()];
+                //$msg = ['red', $e->getMessage()];
 
             }
         }
@@ -230,11 +230,11 @@ class Road extends MY_Controller {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
                 }
 
-                $msg = ['green', 'ファイルは正常にアップロードされました'];
+                //$msg = ['green', 'ファイルは正常にアップロードされました'];
 
             } catch (RuntimeException $e) {
                 $fileFlg = false;
-                $msg = ['red', $e->getMessage()];
+                //$msg = ['red', $e->getMessage()];
                 throw new RuntimeException('失敗しました');
             }
         }
@@ -270,11 +270,11 @@ class Road extends MY_Controller {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
                 }
 
-                $msg = ['green', 'ファイルは正常にアップロードされました'];
+                //$msg = ['green', 'ファイルは正常にアップロードされました'];
 
             } catch (RuntimeException $e) {
                 $imageFlg = false;
-                $msg = ['red', $e->getMessage()];
+                //$msg = ['red', $e->getMessage()];
                 throw new RuntimeException('失敗しました');
 
             }

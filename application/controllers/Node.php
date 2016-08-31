@@ -103,11 +103,11 @@ class Node extends MY_Controller
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
                 }
 
-                $msg = ['green', 'ファイルは正常にアップロードされました'];
+                //$msg = ['green', 'ファイルは正常にアップロードされました'];
 
             } catch (RuntimeException $e) {
 
-                $msg = ['red', $e->getMessage()];
+                //$msg = ['red', $e->getMessage()];
 
             }
 
@@ -165,11 +165,11 @@ class Node extends MY_Controller
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
                 }
 
-                $msg = ['green', 'ファイルは正常にアップロードされました'];
+                //$msg = ['green', 'ファイルは正常にアップロードされました'];
 
             } catch (RuntimeException $e) {
 
-                $msg = ['red', $e->getMessage()];
+                //$msg = ['red', $e->getMessage()];
 
             }
 
@@ -232,11 +232,11 @@ class Node extends MY_Controller
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
                 }
 
-                $msg = ['green', 'ファイルは正常にアップロードされました'];
+                //$msg = ['green', 'ファイルは正常にアップロードされました'];
 
             } catch (RuntimeException $e) {
                 $fileFlg = false;
-                $msg = ['red', $e->getMessage()];
+                //$msg = ['red', $e->getMessage()];
 
             }
 
