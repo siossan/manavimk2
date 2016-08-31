@@ -92,7 +92,7 @@ class Node extends MY_Controller
 
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = "/upload/".$_FILES['file']['name'];
+                $path = $path = sprintf('./upload/%s', $_FILES['file']['name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['file']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -147,14 +147,8 @@ class Node extends MY_Controller
                         throw new RuntimeException('その他のエラーが発生しました');
                 }
 
-                // $_FILES['file']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
-                $type = @exif_imagetype($_FILES['file']['tmp_name']);
-                if (!in_array($type, array('IMAGETYPE_JPEG'), true)) {
-                    throw new RuntimeException('画像形式が未対応です');
-                }
-
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = '/upload/'.$_FILES['file']['name'];
+                $path = $path = sprintf('./upload/%s', $_FILES['file']['name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s', $_FILES['file']['name']);
                 if (!move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -212,12 +206,6 @@ class Node extends MY_Controller
                         throw new RuntimeException('ファイルサイズが大きすぎます');
                     default:
                         throw new RuntimeException('その他のエラーが発生しました');
-                }
-
-                // $_FILES['file']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
-                $type = @exif_imagetype($_FILES['file']['tmp_name']);
-                if (!in_array($type, array('IMAGETYPE_JPEG'), true)) {
-                    throw new RuntimeException('画像形式が未対応です');
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
