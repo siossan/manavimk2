@@ -157,8 +157,6 @@ class Road extends MY_Controller {
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
                 $path = '/upload/'.$_FILES['image']['name'];
-                echo $path;
-                echo $_FILES['image']['tmp_name'];
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['image']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -256,6 +254,9 @@ class Road extends MY_Controller {
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
                 $path = '/upload/'.$_FILES['image']['name'];
+
+                echo $path;
+                echo $_FILES['image']['tmp_name'];
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['image']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
