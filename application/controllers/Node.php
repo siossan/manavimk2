@@ -22,8 +22,16 @@ class Node extends MY_Controller
 
     public function send()
     {
+        $id = 1;
+        if(!empty($_POST['id'])){
+            $id = $_POST['id'];
+        }elseif(!empty($_GET['id'])){
+            $id = $_GET['id'];
+        }
+
+
         $this->load->model('Nodes_model', '', TRUE);
-        $node = $this->Nodes_model->getNodeWithRoadIdById(1);
+        $node = $this->Nodes_model->getNodeWithRoadIdById($id);
         $roads = array();
         $roadFlg = FALSE;
         foreach ($node as $k => $v) {

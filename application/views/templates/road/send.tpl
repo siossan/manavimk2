@@ -3,8 +3,8 @@
 	"title": "{$road.title}",
 	"type": "{$road.type}",
 	"url": "{$road.file}",
-	"next_road_id": "1",
-	"prev_road_id": "2",
+	"next_node_id": "{$road.end_node_id}",
+	"prev_node_id": "{$road.start_node_id}",
 	"items": [
 	             {if $item_flg == true}
                     {foreach from=$roaditems item=v name=loop}

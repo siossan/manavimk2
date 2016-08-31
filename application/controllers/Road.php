@@ -19,7 +19,7 @@ class Road extends MY_Controller {
     public function send()
     {
         $this->load->model('Roads_model', '', TRUE);
-        $road = $this->Roads_model->getRoadById(1);
+        $road = $this->Roads_model->getRoadById($_POST['id']);
         $this->smarty->assign('road', $road[0]);
 
 
@@ -33,6 +33,9 @@ class Road extends MY_Controller {
         }else{
             $roaditmes = array();
         }
+
+        log_message('error',print_r($_POST, true));
+
         $this->smarty->assign('roaditems', $roaditmes);
         $this->smarty->assign('item_flg', $itemFlg);
         header("Content-Type: application/json; charset=utf-8");
