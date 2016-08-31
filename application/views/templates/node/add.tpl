@@ -12,7 +12,7 @@
             </div><!--well -->
         </div><!--/span-->
 
-        <form action="{$base}question/adddata/" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+        <form action="{$base}node/adddata/" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 
             <div class="span9">
                 <?php echo validation_errors('title'); ?>
@@ -30,20 +30,7 @@
                             <td><input type="text" name="title"></td>
                         </tr>
                         <tr>
-                            <th>サブタイトル</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="abstract"></td>
-                        </tr>
-                        <tr>
-                            <th>説明</th>
-                        </tr>
-                        <tr>
-                            <td><textarea name="body" placeholder="説明分を入力してください"></textarea><br/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>画像</th>
+                            <th>背景画像</th>
                         </tr>
                         <tr>
                             <td><input type="file" name="file"></td>

@@ -12,7 +12,7 @@
             </div><!--well -->
         </div><!--/span-->
 
-        <form action="{$base}road/adddata/{$id}/{$node_id}" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+        <form action="{$base}road/updatedata/{$id}/{$node_id}/{$degree}" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 
             <div class="span9">
                 <?php echo validation_errors('title'); ?>
@@ -27,13 +27,13 @@
                             <th>タイトル</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="title"></td>
+                            <td><input type="text" name="title" value="{$road.title}"></td>
                         </tr>
                         <tr>
                             <th>詳細</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="detail"></td>
+                            <td><input type="text" name="detail" value="{$road.detail}"></td>
                         </tr>
                         <tr>
                             <th>エンドノード</th>
@@ -41,9 +41,13 @@
                         <tr>
                             <td>
                                 <select name="end_node_id">
-                                    {foreach from=$nodes item=v}
+                                {foreach from=$nodes item=v}
+                                    {if $v.node_id == $road.node_id}
+                                        <option value="{$v.node_id}" checked>{$v.title}</option>
+                                    {else}
                                         <option value="{$v.node_id}">{$v.title}</option>
-                                    {/foreach}
+                                    {/if}
+                                {/foreach}
                                 </select>
                             </td>
                         </tr>
@@ -51,13 +55,13 @@
                             <th>背景動画</th>
                         </tr>
                         <tr>
-                            <td><input type="file" name="file"></td>
+                            <td><input type="file" name="file"><br>登録済みファイル名<input type="text" value="{$road.file}" readonly></td>
                         </tr>
                         <tr>
                             <th>ノード接続画像</th>
                         </tr>
                         <tr>
-                            <td><input type="file" name="image"></td>
+                            <td><input type="file" name="image"><br>登録済みファイル名<input type="text" value="{$road.image}" readonly></td>
                         </tr>
                     </table>
                 </h3>

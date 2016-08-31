@@ -12,7 +12,7 @@
             </div><!--well -->
         </div><!--/span-->
 
-        <form action="{$base}road/adddata/{$id}/{$node_id}" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+        <form action="{$base}node/updatedata/{$id}" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 
             <div class="span9">
                 <?php echo validation_errors('title'); ?>
@@ -27,37 +27,13 @@
                             <th>タイトル</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="title"></td>
+                            <td><input type="text" name="title" value="{$node.title}"></td>
                         </tr>
                         <tr>
-                            <th>詳細</th>
+                            <th>背景画像</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="detail"></td>
-                        </tr>
-                        <tr>
-                            <th>エンドノード</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <select name="end_node_id">
-                                    {foreach from=$nodes item=v}
-                                        <option value="{$v.node_id}">{$v.title}</option>
-                                    {/foreach}
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>背景動画</th>
-                        </tr>
-                        <tr>
-                            <td><input type="file" name="file"></td>
-                        </tr>
-                        <tr>
-                            <th>ノード接続画像</th>
-                        </tr>
-                        <tr>
-                            <td><input type="file" name="image"></td>
+                            <td><input type="file" name="file"><br>登録済みファイル名<input type="text" value="{$node.file}" readonly></td>
                         </tr>
                     </table>
                 </h3>

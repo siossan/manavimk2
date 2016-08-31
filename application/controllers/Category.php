@@ -8,6 +8,10 @@ class Category extends MY_Controller {
 		// Set smarty template.
 		// applicatoin/views/templates/...
 
+        $this->load->model('Categories_model', '', TRUE);
+        $Categories = $this->Categories_model->getCategories();
+        $this->smarty->assign('categories', $Categories);
+
 		$this->view('category/index');
 	}
 
