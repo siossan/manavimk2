@@ -116,12 +116,12 @@ class Road extends MY_Controller {
 
                     // $_FILES['file']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
                     $type = @exif_imagetype($_FILES['file']['tmp_name']);
-                    if ($_FILES["file"]['size'] > 500000000) {
+                    if ($_FILES["file"]['size'] > 10000000000) {
                         throw new RuntimeException('アップロードファイルのサイズが上限を超えています');
                     }
 
                     // ファイルを保存する
-                    $path = sprintf('/manavimk2/common/files/%s', $_FILES['file']['name']);
+                    $path = sprintf('www.snowwhite.hokkaido.jp/manavimk2/common/files/%s', $_FILES['file']['name']);
                     //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['file']['name'], image_type_to_extension($type));
                     if (!move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
                         throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -161,7 +161,7 @@ class Road extends MY_Controller {
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = sprintf('/manavimk2/common/files/%s', $_FILES['image']['name']);
+                $path = sprintf('www.snowwhite.hokkaido.jp/manavimk2/common/files/%s', $_FILES['image']['name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['image']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -219,12 +219,12 @@ class Road extends MY_Controller {
 
                 // $_FILES['file']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
                 $type = @exif_imagetype($_FILES['file']['tmp_name']);
-                if ($_FILES["file"]['size'] > 500000000) {
+                if ($_FILES["file"]['size'] >10000000000) {
                     throw new RuntimeException('アップロードファイルのサイズが上限を超えています');
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = sprintf('/manavimk2/common/files/%s', $_FILES['files']['name']);
+                $path = sprintf('www.snowwhite.hokkaido.jp/manavimk2/common/files/%s', $_FILES['files']['name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['file']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -264,7 +264,7 @@ class Road extends MY_Controller {
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = sprintf('/manavimk2/common/files/%s', $_FILES['image']['name']);
+                $path = sprintf('www.snowwhite.hokkaido.jp/manavimk2/common/files/%s', $_FILES['image']['name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['image']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
