@@ -1,8 +1,8 @@
 {
 	"id": "{$node.node_id}",
-	"title": "{$node.tile}",
+	"title": "{$node.title}",
 	"type": "{$node.type}",
-	"url": "{$node.file}",
+	"url": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$node.file}",
 	"lines": [
          {if $road_flg == true}
             {foreach from=$roads item=v name=loop}

@@ -2,7 +2,7 @@
 	"id": "{$road.road_id}",
 	"title": "{$road.title}",
 	"type": "{$road.type}",
-	"url": "{$road.file}",
+	"url": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$road.file}",
 	"next_node_id": "{$road.end_node_id}",
 	"prev_node_id": "{$road.start_node_id}",
 	"items": [
