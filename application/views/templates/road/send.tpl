@@ -12,8 +12,8 @@
         		            {
         			            "id": "{$v.item_id}",
         			            "title": "{$v.title}",
-                                "file": "{$v.file}",
-                                "viewfile": "{$v.viewfile}",
+                                "file": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.file}",
+                                "viewfile": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.viewfile}",
                                 "type": "{$v.type}",
                                 "start": "{$v.start_time}",
                                 "end": "{$v.end_time}"
@@ -22,8 +22,8 @@
         		            {
         			            "id": "{$v.item_id}",
         			            "title": "{$v.title}",
-                                "file": "{$v.file}",
-                                "viewfile": "{$v.viewfile}",
+                                "file": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.file}",
+                                "viewfile": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.viewfile}",
                                 "type": "{$v.type}",
                                 "start": "{$v.start_time}",
                                 "end": "{$v.end_time}"

@@ -10,13 +10,13 @@
 		            {
 			            "id": "{$v.road_id}",
 			            "degree": {$v.degree},
-			            "image": "{$v.image}"
+			            "image": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.image}"
 		            }
 		        {else}
 		            {
 			            "id": "{$v.road_id}",
 			            "degree": {$v.degree},
-			            "image": "{$v.image}"
+			            "image": "www.snowwhite.hokkaido.jp/manavimk2/common/files/{$v.image}"
 		            },
 		        {/if}
             {/foreach}

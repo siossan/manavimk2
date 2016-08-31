@@ -121,7 +121,7 @@ class Road extends MY_Controller {
                     }
 
                     // ファイルを保存する
-                    $path = sprintf('/common/files/%s%s', $_FILES['file']['name'], '.MP4');
+                    $path = sprintf('/manavimk2/common/files/%s', $_FILES['file']['name']);
                     //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['file']['name'], image_type_to_extension($type));
                     if (!move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
                         throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -161,7 +161,7 @@ class Road extends MY_Controller {
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = sprintf('/common/files/%s%s', $_FILES['image']['name'], image_type_to_extension($type));
+                $path = sprintf('/manavimk2/common/files/%s', $_FILES['image']['name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['image']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -189,7 +189,7 @@ class Road extends MY_Controller {
         }
         if($imageFlg == true && $_FILES['image']['size'] > 0){
             echo 'hoge';
-            $params['image'] = sprintf('%s%s', $_FILES['image']['name'], image_type_to_extension($type));
+            $params['image'] = sprintf('%s', $_FILES['image']['name']);
         }
         $this->load->model('Roads_model', '', TRUE);
         $this->Roads_model->updateRoad($id, $params);
@@ -224,7 +224,7 @@ class Road extends MY_Controller {
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = sprintf('/common/files/%s%s', $_FILES['files']['name'], '.MP4');
+                $path = sprintf('/manavimk2/common/files/%s', $_FILES['files']['name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['file']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -264,7 +264,7 @@ class Road extends MY_Controller {
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = sprintf('/common/files/%s%s', $_FILES['image']['name'], image_type_to_extension($type));
+                $path = sprintf('/manavimk2/common/files/%s', $_FILES['image']['name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['image']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -293,7 +293,7 @@ class Road extends MY_Controller {
         }
         if($imageFlg == true && $_FILES['image']['size'] > 0){
             echo 'hoge';
-            $params['image'] = sprintf('%s%s', $_FILES['image']['name'], image_type_to_extension($type));
+            $params['image'] = sprintf('%s', $_FILES['image']['name']);
         }
         $this->load->model('Roads_model', '', TRUE);
         $this->Roads_model->setRoad($params);
