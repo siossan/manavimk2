@@ -12,7 +12,7 @@
         		            {
         			            "id": "{$v.item_id}",
         			            "title": "{$v.title}",
-                                "file": "../manavimk2/upload/files/{$v.file}",
+                                "file": "../manavimk2/upload/{$v.file}",
                                 "viewfile": "../manavimk2/upload/{$v.viewfile}",
                                 "type": "{$v.type}",
                                 "start": "{$v.start_time}",
@@ -22,7 +22,7 @@
         		            {
         			            "id": "{$v.item_id}",
         			            "title": "{$v.title}",
-                                "file": "../manavimk2/upload/files/{$v.file}",
+                                "file": "../manavimk2/upload/{$v.file}",
                                 "viewfile": "../manavimk2/upload/{$v.viewfile}",
                                 "type": "{$v.type}",
                                 "start": "{$v.start_time}",
