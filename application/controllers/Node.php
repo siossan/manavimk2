@@ -97,7 +97,7 @@ class Node extends MY_Controller
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = sprintf('./upload/%s', $_FILES['file']['name'], image_type_to_extension($type));
+                $path = "/upload/".$_FILES['file']['name'];
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['file']['name'], image_type_to_extension($type));
                 if (!move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
@@ -159,7 +159,7 @@ class Node extends MY_Controller
                 }
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = sprintf('./upload/%s', sha1_file($_FILES['file']['tmp_name']), image_type_to_extension($type));
+                $path = '/upload/'.$_FILES['file']['name'];
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s', $_FILES['file']['name']);
                 if (!move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
