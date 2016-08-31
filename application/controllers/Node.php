@@ -92,7 +92,7 @@ class Node extends MY_Controller
 
                 // $_FILES['file']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
                 $type = @exif_imagetype($_FILES['file']['tmp_name']);
-                if (!in_array($type, IMAGETYPE_JPEG, true)) {
+                if (!in_array($type, array('IMAGETYPE_JPEG'), true)) {
                     throw new RuntimeException('画像形式が未対応です');
                 }
 
@@ -154,7 +154,7 @@ class Node extends MY_Controller
 
                 // $_FILES['file']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
                 $type = @exif_imagetype($_FILES['file']['tmp_name']);
-                if (!in_array($type, IMAGETYPE_JPEG, true)) {
+                if (!in_array($type, array('IMAGETYPE_JPEG'), true)) {
                     throw new RuntimeException('画像形式が未対応です');
                 }
 
@@ -221,7 +221,7 @@ class Node extends MY_Controller
 
                 // $_FILES['file']['mime']の値はブラウザ側で偽装可能なので、MIMEタイプを自前でチェックする
                 $type = @exif_imagetype($_FILES['file']['tmp_name']);
-                if (!in_array($type, IMAGETYPE_JPEG, true)) {
+                if (!in_array($type, array('IMAGETYPE_JPEG'), true)) {
                     throw new RuntimeException('画像形式が未対応です');
                 }
 
