@@ -122,8 +122,9 @@ class Node extends MY_Controller
     }
 
 
-    public function add()
+    public function add($cId)
     {
+        $this->smarty->assign('category_id', $cId);
         $this->view('node/add');
     }
 
