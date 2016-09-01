@@ -12,7 +12,7 @@
             </div><!--well -->
         </div><!--/span-->
 
-        <form action="{$base}node/adddata/" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+        <form action="{$base}node/adddata/{$category_id}" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 
             <div class="span9">
                 <?php echo validation_errors('title'); ?>
