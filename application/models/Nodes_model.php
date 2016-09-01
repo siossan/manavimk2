@@ -63,7 +63,7 @@ class Nodes_model extends CI_Model {
 
     public function getNodesByCategoryId($id) {
         $sql = 'SELECT * FROM nodes n 
-                WHERE n.node_id = '. $id;
+                WHERE n.category_id = '. $id;
         $query = $this->db->query($sql);
         if ($this->db->query($sql)) {
             // 成功処理
