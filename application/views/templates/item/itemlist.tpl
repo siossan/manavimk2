@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="answer_list">
-            <div class="answer_comment"><div class="arw"></div>メニューを選択してください．</div>
+            <div class="answer_comment"><div class="arw"></div>アイテムを選択してください．</div>
             <table>
                 <tr>
                     <th>名称</th>

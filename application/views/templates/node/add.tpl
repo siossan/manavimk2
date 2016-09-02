@@ -3,6 +3,7 @@
 
 <div class="container-fluid">
     <div class="row-fluid">
+        <div class="answer_comment"><div class="arw"></div>ノードを選択してください．</div>
         <div class="span3">
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">

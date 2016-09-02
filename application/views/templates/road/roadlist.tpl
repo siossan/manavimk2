@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="answer_list">
-            <div class="answer_comment"><div class="arw"></div>メニューを選択してください．</div>
+            <div class="answer_comment"><div class="arw"></div>ロードを選択してください．</div>
             <table>
                 <tr>
                     <th>名称</th>
@@ -24,7 +24,7 @@
                     {/if}
                     <tr>
                         <td>
-                            <a href="{$base}road/update/{$v.road_id}/{$node_id}/{$k}">{$v.title}</a>
+                            <a href="{$base}road/update/{$v.road_id}/{$node_id}/{$degree}">{$v.title}</a>
                         </td>
 
                         <td>{$v.start_node_id}</td>
