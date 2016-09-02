@@ -3,8 +3,14 @@
 
 <div class="container-fluid">
     <div class="row-fluid">
-
-        <div class="answer_comment"><div class="arw"></div>ノードを選択してください．</div>
+        <div class="span3">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Sidebar</li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div><!--well -->
+        </div><!--/span-->
 
         <form action="{$base}node/adddata/{$category_id}" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 
