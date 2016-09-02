@@ -7,6 +7,7 @@
     <div class="row-fluid">
         <p>データの登録が完了しました</p>
     </div><!--/row-->
+    <div class="btn btn-primary btn-large" onclick="location.href='{$base}road/roadlist/{$node_id}';">リストに戻る</div>
     <hr>
 </div><!--/.fluid-container-->
 

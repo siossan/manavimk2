@@ -7,7 +7,7 @@
     <div class="row-fluid">
         <p>データの登録が完了しました</p>
     </div><!--/row-->
-    <div class="btn btn-primary btn-large" onclick="location.href='{$base}node/nodelist/';">新規作成</div>
+    <div class="btn btn-primary btn-large" onclick="location.href='{$base}node/nodelist/{$category_id}';">リストを表示する</div>
     <hr>
 </div><!--/.fluid-container-->
 

@@ -187,6 +187,7 @@ class Road extends MY_Controller {
         }
         $this->load->model('Roads_model', '', TRUE);
         $this->Roads_model->updateRoad($id, $params);
+        $this->smarty->assign('node_id', $nodeId);
         $this->view('road/updateaccept');
     }
 
@@ -284,6 +285,7 @@ class Road extends MY_Controller {
         }
         $this->load->model('Roads_model', '', TRUE);
         $this->Roads_model->setRoad($params);
+        $this->smarty->assign('node_id', $nodeId);
         $this->view('road/addaccept');
     }
 
