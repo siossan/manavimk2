@@ -18,7 +18,7 @@ class Item extends MY_Controller {
         // applicatoin/views/templates/...
         $this->load->model('Items_model', '', TRUE);
         $items = $this->Items_model->getItemsByRoadId($rId);
-        $this->smarty->assign('item', $items);
+        $this->smarty->assign('items', $items);
         $this->smarty->assign('road_id', $rId);
         $this->view('item/itemlist');
     }
