@@ -55,8 +55,8 @@
                         <tr>
                             <td>
                                 <select name="type">
-                                        <option value="0" {if $item.type == 0}checked{/if}>右</option>
-                                        <option value="1" {if $item.type == 1}checked{/if}>左</option>
+                                        <option value="0" {if $item.type == 0}selected{/if}>右</option>
+                                        <option value="1" {if $item.type == 1}selected{/if}>左</option>
                                 </select>
                             </td>
                         </tr>
