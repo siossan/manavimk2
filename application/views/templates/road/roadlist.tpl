@@ -12,6 +12,7 @@
                     <th>名称</th>
                     <th>スタートノード</th>
                     <th>エンドノード</th>
+                    <th>操作</th>
                 </tr>
                 {assign var="end_flg" value=false}
                 {assign var="degree" value=0}
@@ -24,11 +25,12 @@
                     {/if}
                     <tr>
                         <td>
-                            <a href="{$base}road/update/{$v.road_id}/{$node_id}/{$degree}">{$v.title}</a>
+                            <a href="{$base}item/itemlist/{$v.road_id}">{$v.title}</a>
                         </td>
 
                         <td>{$v.start_node_id}</td>
                         <td>{$v.end_node_id}</td>
+                        <td><a class="btn btn-primary btn-large" href="{$base}road/update/{$v.road_id}/{$node_id}/{$degree}" style="text-align: center;">編集</a></td>
                     </tr>
                 {/foreach}
             </table>

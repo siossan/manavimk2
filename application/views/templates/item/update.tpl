@@ -12,7 +12,7 @@
             </div><!--well -->
         </div><!--/span-->
 
-        <form action="{$base}item/adddata/{$road_id}/" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+        <form action="{$base}item/updatedata/{$id}/{$road_id}" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 
             <div class="span9">
                 <?php echo validation_errors('title'); ?>
@@ -27,13 +27,27 @@
                             <th>タイトル</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="title"></td>
+                            <td><input type="text" name="title" value="{$item.title}"></td>
                         </tr>
                         <tr>
                             <th>詳細</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="detail"></td>
+                            <td><input type="text" name="detail" value="{$item.detail}"></td>
+                        </tr>
+                        <tr>
+                            <th>表示開始時間</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="start" value="{$item.start_time}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>表示終了時間</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="end" value="{$item.end_time}">
+                            </td>
                         </tr>
                         <tr>
                             <th>表示位置</th>
@@ -41,36 +55,22 @@
                         <tr>
                             <td>
                                 <select name="type">
-                                    <option value="1">右</option>
-                                    <option value="2">左</option>
+                                        <option value="0" {if $item.type == 0}checked{/if}>右</option>
+                                        <option value="1" {if $item.type == 1}checked{/if}>左</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
-                            <th>表示開始時間</th>
+                            <th>背景動画</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="start">
-                            </td>
+                            <td><input type="file" name="file"><br>登録済みファイル名<input type="text" value="{$item.file}" readonly></td>
                         </tr>
                         <tr>
-                            <th>表示終了時間</th>
+                            <th>ノード接続画像</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="end">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>接続画像</th>
-                        </tr>
-                        <tr>
-                            <td><input type="file" name="file"></td>
-                        </tr>
-                        <tr>
-                            <th>詳細画像</th>
-                        </tr>
-                        <tr>
-                            <td><input type="viewfile" name="image"></td>
+                            <td><input type="file" name="viewfile"><br>登録済みファイル名<input type="text" value="{$item.viewfile}" readonly></td>
                         </tr>
                     </table>
                 </h3>

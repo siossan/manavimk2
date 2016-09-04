@@ -16,6 +16,18 @@ class Items_model extends CI_Model {
         // 独自処理
     }
 
+    public function getItemById($id) {
+        $sql = 'SELECT * FROM items WHERE item_id = '.$id;
+        $query = $this->db->query($sql);
+        if ($this->db->query($sql)) {
+            // 成功処理
+            $result = $query->result('array');
+            return $result;
+        } else {
+            // 失敗処理
+            return false;
+        }
+    }
 
     public function getItemsByRoadId($roadId) {
         $sql = 'SELECT * FROM items i 
@@ -31,9 +43,9 @@ class Items_model extends CI_Model {
         }
     }
 
-    public function setQuestion($params){
-        $sql = $this->db->insert_string('questions', $params);
-        if ($this->db->query($sql)) {
+    public function updateRoad($id, $params){
+        $sql = $this->db->where('item_id', $id);
+        if ($this->db->update('items', $params)) {
             // 成功処理
             return true;
         } else {

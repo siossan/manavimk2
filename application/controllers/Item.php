@@ -24,76 +24,28 @@ class Item extends MY_Controller {
     }
 
 
-    public function add()
+    public function add($roadId)
     {
-        //$this->smarty->assign('node_id', $nodeId);
-        //$this->smarty->assign('degree', $degree*90);
+        $this->smarty->assign('road_id', $roadId);
 
 
 
         // ノードリスト取得
-        //$this->load->model('Nodes_model', '', TRUE);
-        //$node = $this->Nodes_model->getNodeById($nodeId);
-        //$nodes = $this->Nodes_model->getNodesByCategoryId($node[0]['category_id']);
-        //$this->smarty->assign('nodes', $nodes);
-
         $this->view('item/add');
     }
 
-    public function send()
-    {
-        $id = 1;
-        if(!empty($_POST['id'])){
-            $id = $_POST['id'];
-        }elseif(!empty($_GET['id'])){
-            $id = $_GET['id'];
-        }
-
-        $this->load->model('Items_model', '', TRUE);
-        $item = $this->Items_model->getItemById($id);
-        $this->smarty->assign('item', $item[0]);
-
-
-        $this->load->model('Items_model', '', TRUE);
-        $itemitmes = $this->Items_model->getItemsByItemId($item[0]['item_id']);
-        $itemFlg = FALSE;
-
-        if(!empty($itemitmes)){
-            $itemFlg = TRUE;
-
-        }else{
-            $itemitmes = array();
-        }
-
-        log_message('error',print_r($_POST, true));
-
-        $this->smarty->assign('itemitems', $itemitmes);
-        $this->smarty->assign('item_flg', $itemFlg);
-        header("Content-Type: application/json; charset=utf-8");
-        $this->view('item/send');
-    }
-
-    public function update($id, $nodeId, $degree)
+    public function update($id, $roadId)
     {
         $this->load->model('Items_model', '', TRUE);
         $item = $this->Items_model->getItemById($id);
         $this->smarty->assign('item', $item[0]);
         $this->smarty->assign('id', $id);
-        $this->smarty->assign('node_id', $nodeId);
-        $this->smarty->assign('degree', $degree*90);
-
-
-
-        // ノードリスト取得
-        $this->load->model('Nodes_model', '', TRUE);
-        $node = $this->Nodes_model->getNodeById($nodeId);
-        $nodes = $this->Nodes_model->getNodesByCategoryId($node[0]['category_id']);
-        $this->smarty->assign('nodes', $nodes);
+        $this->smarty->assign('road_id', $roadId);
 
         $this->view('item/update');
     }
 
-    public function updatedata($id, $nodeId, $degree){
+    public function updatedata($id, $roadId){
 
 
         $fileFlg = true;
@@ -137,12 +89,12 @@ class Item extends MY_Controller {
             }
 
         $imageFlg = true;
-        if (isset($_FILES['image']['error']) && is_int($_FILES['image']['error'])) {
+        if (isset($_FILES['viewfile']['error']) && is_int($_FILES['viewfile']['error'])) {
 
             try {
 
                 // $_FILES['image']['error'] の値を確認
-                switch ($_FILES['image']['error']) {
+                switch ($_FILES['viewfile']['error']) {
                     case UPLOAD_ERR_OK: // OK
                         break;
                     case UPLOAD_ERR_NO_FILE:   // ファイル未選択
@@ -155,9 +107,9 @@ class Item extends MY_Controller {
 
 
                 // ファイルデータからSHA-1ハッシュを取ってファイル名を決定し、ファイルを保存する
-                $path = $path = sprintf('./upload/%s', $_FILES['image']['name']);
+                $path = $path = sprintf('./upload/%s', $_FILES['viewfile']['name']);
                 //$path = sprintf('C:\xampp\htdocs\manavimk2\common\files\%s%s', $_FILES['image']['name'], image_type_to_extension($type));
-                if (!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
+                if (!move_uploaded_file($_FILES['viewfile']['tmp_name'], $path)) {
                     throw new RuntimeException('ファイル保存時にエラーが発生しました');
                 }
 
@@ -173,23 +125,25 @@ class Item extends MY_Controller {
         $params = array(
             'title' => $_POST['title'],
             'detail' => $_POST['detail'],
-            'start_node_id' => $nodeId,
-            'end_node_id' => $_POST['end_node_id'],
-            'degree' => $degree,
-            'type' => 'node'
+            'start_time' => $_POST['start'],
+            'end_time' => $_POST['end'],
+            'type' => $_POST['type'],
+            'road_id' => $roadId
         );
         if($fileFlg == true && $_FILES['file']['size'] > 0){
-            $params['file'] = $_FILES['file']['name'];
+            $params['file'] =  $_FILES['file']['name'];
         }
         if($imageFlg == true && $_FILES['image']['size'] > 0){
-            $params['image'] = $_FILES['image']['name'];
+            $params['viewfile'] = $_FILES['image']['name'];
         }
+
         $this->load->model('Items_model', '', TRUE);
         $this->Items_model->updateItem($id, $params);
+        $this->smarty->assign('road_id', $roadId);
         $this->view('item/updateaccept');
     }
 
-    public function adddata($nodeId, $degree){
+    public function adddata($roadId){
 
 
         $fileFlg = true;
@@ -270,19 +224,20 @@ class Item extends MY_Controller {
         $params = array(
             'title' => $_POST['title'],
             'detail' => $_POST['detail'],
-            'start_node_id' => $nodeId,
-            'end_node_id' => $_POST['end_node_id'],
-            'degree' => $degree,
-            'type' => 'node'
+            'start_time' => $_POST['start'],
+            'end_time' => $_POST['end'],
+            'type' => $_POST['type'],
+            'road_id' => $roadId
         );
         if($fileFlg == true && $_FILES['file']['size'] > 0){
             $params['file'] =  $_FILES['file']['name'];
         }
         if($imageFlg == true && $_FILES['image']['size'] > 0){
-            $params['image'] = $_FILES['image']['name'];
+            $params['viewfile'] = $_FILES['image']['name'];
         }
         $this->load->model('Items_model', '', TRUE);
         $this->Items_model->setItem($params);
+        $this->smarty->assign('road_id', $roadId);
         $this->view('item/addaccept');
     }
 
