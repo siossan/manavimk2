@@ -14,7 +14,7 @@
                 {foreach from=$items item=v key=k name=loop}
                     <tr>
                         <td>
-                            <a href="{$base}item/update/{$v.item_id}/{$road_id}}">{$v.title}</a>
+                            <a href="{$base}item/update/{$v.item_id}/{$road_id}">{$v.title}</a>
                         </td>
                     </tr>
                 {/foreach}
