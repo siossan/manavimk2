@@ -43,7 +43,7 @@ class Items_model extends CI_Model {
         }
     }
 
-    public function updateRoad($id, $params){
+    public function updateItem($id, $params){
         $sql = $this->db->where('item_id', $id);
         if ($this->db->update('items', $params)) {
             // 成功処理
